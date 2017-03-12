@@ -1,4 +1,5 @@
 import React from 'react';
+import { ListGroup, ListGroupItem, Button } from 'reactstrap';
 
 export default class TodoList extends React.Component{
   constructor(){
@@ -12,15 +13,17 @@ export default class TodoList extends React.Component{
     const arr = [];
     let cpt = 0;
     this.props.data.forEach((item) => {
-      arr.push(<li key={cpt}>{item}</li>)
+      arr.push(<ListGroupItem key={cpt}>
+              {item}
+              </ListGroupItem>)
+
       cpt++;
     });
     return(
-      <div>
-        <ul>
-          {arr}
-        </ul>
-      </div>
+
+      <ListGroup>
+        {arr}
+      </ListGroup>
     );
   }
 
